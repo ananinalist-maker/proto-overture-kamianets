@@ -520,7 +520,7 @@ footer b{font:400 24px var(--serif);color:var(--lime)}
     mt.querySelectorAll('button').forEach(function(b,k){b.classList.toggle('act',k===i)})}
   PINS.forEach(function(q,i){var b=document.createElement('button');b.type='button';
     b.innerHTML='<b>'+(i?'Nocturne і Serenade':'Overture')+'</b>'+q.a+', Кам’янець-Подільський';b.onclick=function(){showPin(i)};mt.appendChild(b)});
-  var mio=new IntersectionObserver(function(es){if(es[0].isIntersecting){showPin(0);mio.disconnect()}},{rootMargin:'300px'}); mio.observe(mf);
+  var mio=new IntersectionObserver(function(es){if(es[0].isIntersecting){if(mf.src.indexOf('openstreetmap')<0)showPin(0);mio.disconnect()}},{rootMargin:'300px'}); mio.observe(mf);
   // календар
   var pad=function(n){return (n<10?'0':'')+n};
   var iso=function(d){return d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate())};
